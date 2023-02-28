@@ -2,11 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const db = require("./app/models");
+const dotenv = require("dotenv");
 const PORT = process.env.PORT || 8080;
 
 var corsOptions = {
     origin: "http://localhost:8081"
 }
+
+// get config vars
+dotenv.config();
 
 // Set origin
 app.use(cors(corsOptions));
