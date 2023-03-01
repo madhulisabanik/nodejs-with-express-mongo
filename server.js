@@ -41,6 +41,7 @@ app.get("/", (req, res) => {
 
 require("./app/routes/tutorial.routes")(app);
 require("./app/routes/user.routes")(app);
+require("./app/routes/news.routes")(app);
 
 app.listen(PORT, () => {
     console.log(`Server is running at port ${PORT}`);
