@@ -107,6 +107,7 @@ exports.delete = (req, res) => {
 exports.findAll = (req, res) => {
 
     News.find()
+        .sort([['createdAt', 'descending']])
         .then((data) => {
             res.send(data);
         })
