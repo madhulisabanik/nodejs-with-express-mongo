@@ -16,9 +16,6 @@ exports.create = (req, res) => {
     } else if(!req.body.url) {
         res.status(400).send({ message: "URL cannot be empty!" });
         return;
-    } else if(!req.body.urlToImage) {
-        res.status(400).send({ message: "Image URL cannot be empty!" });
-        return;
     }
 
     const news = new News({
@@ -26,7 +23,7 @@ exports.create = (req, res) => {
         description: req.body.description,
         newsCategory: req.body.newsCategory,
         url: req.body.url,
-        urlToImage: req.body.urlToImage
+        urlToImage: req.body.urlToImage ? req.body.urlToImage : "https://economictimes.indiatimes.com/thumb/msid-95351547,width-100,height-75/news/international/world-news/the-us-midterm-election-for-dummies.jpg"
     });
 
     news.save(news)
