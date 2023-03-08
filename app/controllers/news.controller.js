@@ -88,7 +88,7 @@ exports.delete = (req, res) => {
                     message: "No News found with the id: " + id
                 });
             } else {
-                res.send({
+                res.status(200).send({
                     message: "News deleted succesfully!"
                 });
             }
